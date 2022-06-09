@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block links %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Bootstrap-Calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Features-Boxed.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Lightbox-Gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/untitled.css' %}">
+    <link href="{% static 'Posts/css/blog-post.css' %}" rel="stylesheet">
+{% endblock links %}
+
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row row justify-content-center features">
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <h1 class="mt-4">{{ post.title }}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    By
+                    <a href="#">{{ post.author }}</a>
+                </p>
+                <hr>
+                <p>Posted on {{ post.modified }}</p>
+                <hr>
+                {% if post.image %}
+                    <img class="img-fluid rounded" src="{{ post.image.url }}" alt="">
+                    <hr>
+                {% endif %}
+                <p class="text-justify">{{ post.body|safe }}</p>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'Home/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'Home/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Home/assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="{% static 'Home/assets/js/theme.js' %}"></script>
+{% endblock content %}

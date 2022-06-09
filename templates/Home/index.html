@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'Home/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Features-Boxed.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Lightbox-Gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/untitled.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <main class="page lanidng-page"></main>
+    <div data-bs-parallax-bg="true"
+         style="height: 620px;background-image: url({% static 'img/schoolpic.jpg' %});background-position: center;background-size: cover;"></div>
+    <div class="features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">What is the Infoportal?</h2>
+                <p class="text-center">View Information regarding various school events and activities.</p>
+            </div>
+
+            <div class="row justify-content-center features">
+
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-calendar-check-o icon"></i>
+                        <h3 class="name">School and Interhouse Events</h3>
+                        <p class="description">Stay up to date about the various happenings and events in school.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-home icon"></i>
+                        <h3 class="name">From the EdBoard</h3>
+                        <p class="description">View the various events conducted by the EdBoard and read their latest
+                            articles.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-commenting-o icon"></i>
+                        <h3 class="name">AMUN, Socities and More</h3>
+                        <p class="description">Get information and communication from your society and committee heads
+                            regarding these events.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--
+    GALLERY
+    <section class="portfolio-block website gradient" style="height: 250px;">
+        <h1>Gallery&nbsp;</h1>
+        <p>Pctures from events throughout the year</p>
+    </section>
+
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row photos">
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="assets/img/desk.jpg"><img
+                        class="img-fluid" src="assets/img/desk.jpg"></a></div>
+            </div>
+        </div>
+    </div>
+    -->
+    <script src="{% static 'Home/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'Home/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Home/assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="{% static 'Home/assets/js/theme.js' %}"></script>
+{% endblock content %}

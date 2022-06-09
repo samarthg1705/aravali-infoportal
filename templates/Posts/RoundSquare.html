@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Round Sqaure
+{% endblock title %}
+
+{% block links %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Bootstrap-Calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Features-Boxed.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/Lightbox-Gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/assets/css/untitled.css' %}">
+    <link rel="stylesheet" href="{% static 'Posts/assets/css/-Filterable-Cards-.css' %}">
+    <link rel="stylesheet" href="{% static 'Posts/assets/css/Paralax-Hero-Banner.css' %}">
+    <link rel="stylesheet" href="{% static 'Posts/assets/css/Paralax-Hero-Banner-1.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <main class="page projets-page">
+        <div class="jumbotron hero-technology"
+             style="background-image: url(&quot;{% static 'Posts/assets/img/rs.jpg' %}&quot;);">
+            <h1 class="hero-title">Round Sqaure</h1>
+        </div>
+    </main>
+    <div>
+        <div class="container" style="margin-bottom: 5%">
+            <div class="row">
+                <div class="col-md-6 col-lg-8">
+                    {% for post in posts %}
+
+                        <div class="card-group" style="margin-bottom: 8%">
+                            {% if post.image %}
+                                <div class="card"><img class="card-img-top w-100 d-block" style="height: 100%;"
+                                                       src={{ post.image.url }}></div>
+                            {% endif %}
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ post.title }}</h4>
+                                    <p class="card-text text-justify">{{ post.body|truncatechars:300|striptags }}</p>
+                                    <a href="{{ post.get_absolute_url }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div style="background-color: #4080f6;">
+                        <h2 style="color: rgb(246,247,249);">Upcoming</h2>
+                    </div>
+                    <ul class="list-group">
+                        {% for post in recent %}
+                            <li class="list-group-item"><span>
+                                <a href="{{ post.get_absolute_url }}">
+                                    {{ post.title|truncatechars:20 }}
+                                </a> - {{ post.forum.name }}
+                            </span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'Home/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'Home/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Home/assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="{% static 'Home/assets/js/theme.js' %}"></script>
+    <script src="{% static 'Posts/assets/js/-Filterable-Cards-.js' %}"></script>
+    <script src="{% static 'Posts/assets/js/Paralax-Hero-Banner.js' %}"></script>
+    <script src="{% static 'Posts/assets/js/theme.js' %}"></script>
+{% endblock content %}

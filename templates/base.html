@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- LINKS -->
+
+    <!-- LINKS END -->
+
+    <!-- CSS -->
+    <style>
+        ul#nav-ul li a {
+            font-family: "Avenir Next", monospace;
+        }
+
+        #sagar {
+            color: #b3d7ff;
+        }
+
+        #himgiri {
+            color: yellow;
+        }
+
+        #srishti {
+            color: lime;
+        }
+
+        #vasundhara {
+            color: orangered;
+        }
+    </style>
+    <!-- CSS END -->
+    {% block links %}{% endblock links %}
+</head>
+<body style="margin-top: 60px">
+<!-- HEADER -->
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark "
+     style="font-family: 'Avenir Next', monospace; font-weight: bold;">
+    <div class="container"><a class="navbar-brand logo¬" href="{% url 'index' %}" style="color: azure">ARAVALI
+        INFOPORTAL</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto" id="nav-ul">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'school' %}">School</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Houses
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'sagar' %}" id="sagar">Sagar</a>
+                        <a class="dropdown-item" href="{% url 'srishti' %}" id="srishti">Srishti</a>
+                        <a class="dropdown-item" href="{% url 'himgiri' %}" id="himgiri">Himgiri</a>
+                        <a class="dropdown-item" href="{% url 'vasundhara' %}" id="vasundhara">Vansundhara</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Others
+                    </a>
+                    <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'environment' %}">Environment</a>
+                        <a class="dropdown-item" href="{% url 'societies' %}">Societies</a>
+                        <a class="dropdown-item" href="{% url 'amun' %}">AMUN</a>
+                        <a class="dropdown-item" href="{% url 'roundsquare' %}">Round Square</a>
+                        <a class="dropdown-item" href="{% url 'socialinitiatives' %}">Social Initiatives</a>
+                        <a class="dropdown-item" href="{% url 'sports' %}">Sports</a>
+                    </div>
+                </li>
+                <li class=" nav-item" role="presentation">
+                    <a class="nav-link" href="https://aravaliinsight.wordpress.com/">EdBoard</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- HEADER END -->
+
+
+{% block content %}{% endblock content %}
+
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/theshriramschool/"><i class="icon ion-social-facebook"></i></a>
+            <a href="https://www.instagram.com/aravali_insight/"><i class="icon ion-social-instagram-outline"></i></a>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END -->
+</body>
+</html>
